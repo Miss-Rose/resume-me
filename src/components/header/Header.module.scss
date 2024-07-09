@@ -1,0 +1,81 @@
+@import "src/global.scss";
+
+.header {
+
+  margin: 0;
+
+  h1, h2 {
+    margin: 0;
+  }
+  nav {
+    margin-top: 48px;
+    ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin: 24px 0 0 0;
+      font-size: 16px;
+    }
+
+    a {
+      text-decoration: none;
+    }
+    a:hover {
+      &::before {
+        content: "—— ";
+      }
+    }
+  }
+
+  .networks {
+    display: flex;
+    margin-top: 36px;
+    gap: 8px;
+  }
+
+}
+
+
+.headerDark {
+  h2 {
+    color: $orange-color;
+  }
+  nav {
+    a:hover {
+      color: $green-color;
+    }
+    a.active {
+      color: $green-color;
+    }
+  }
+}
+
+.headerLight {
+  h2 {
+    color: $orange-color-light;
+  }
+  nav {
+    a:hover {
+      color: $green-color-light;
+    }
+    a.active {
+      color: $green-color-light;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .header {
+    margin: 24px 0;
+    text-align: center;
+
+    nav {
+      display: none;
+    }
+  }
+  .networks {
+    justify-content: center;
+  }
+}

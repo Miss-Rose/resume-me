@@ -1,0 +1,212 @@
+@import "src/global.scss";
+
+@mixin sectionItem {
+  display: grid;
+  grid-template-columns: 100px auto;
+  gap: 36px;
+  padding: 24px;
+}
+
+@mixin title {
+  padding: 8px;
+  margin: 0 4px;
+  border-radius: 15px;
+  text-align: center;
+}
+@mixin spanCnt {
+  padding: 4px 8px;
+  margin: 0 4px;
+  border-radius: 15px;
+}
+
+.mainInfoSection {
+  display: flex;
+  gap: 48px;
+  flex-direction: column;
+  scrollbar-width: none;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+
+  .box::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+}
+
+/* LIGHT MODE STYLES */
+.mainInfoSectionLight {
+  .expertise, .education, .languages {
+    h2:first-child {
+      @include title;
+      border: 1px solid $green-color-light;
+    }
+  }
+
+  .experienceItem {
+    .period {
+      border-right: 1px solid $green-color-light;
+    }
+    .info {
+      h3 {
+        color: $orange-color-light;
+      }
+      .company {
+        color: $green-color-light;
+      }
+    }
+
+    .technologies {
+      span {
+        border: 1px solid $green-color-light;
+        background-color: $background-orange-color-light;
+        color: $orange-color-light;
+      }
+    }
+  }
+
+  .educationItem {
+    .period {
+      border-right: 1px solid $green-color-light;
+    }
+
+    .field {
+      color: $orange-color-light;
+    }
+
+    .uni {
+      color: $green-color-light;
+    }
+  }
+
+  .languages {
+    section span {
+      border: 1px solid $green-color-light;
+      background-color: $background-orange-color-light;
+      color: $orange-color-light;
+    }
+  }
+}
+
+/* DARK MODE STYLES */
+.mainInfoSectionDark {
+  .expertise, .education, .languages {
+    h2:first-child {
+      @include title;
+      border: 1px solid $green-color;
+    }
+  }
+
+  .experienceItem {
+    .period {
+      border-right: 1px solid $green-color;
+    }
+    .info {
+      h3 {
+        color: $orange-color;
+      }
+      .company {
+        color: $green-color;
+      }
+    }
+
+    .technologies {
+      span {
+        border: 1px solid $green-color;
+        background-color: $background-orange-color;
+        color: $orange-color;
+      }
+    }
+  }
+
+  .educationItem {
+    .period {
+      border-right: 1px solid $green-color;
+    }
+
+    .field {
+      color: $orange-color;
+    }
+
+    .uni {
+      color: $green-color;
+    }
+  }
+
+  .languages {
+    section span {
+      border: 1px solid $green-color;
+      background-color: $background-orange-color;
+      color: $orange-color;
+    }
+  }
+}
+
+h3, h2 {
+  margin: 0;
+}
+
+.experienceItem {
+  @include sectionItem;
+
+  .period {
+    text-align: center;
+    padding-right: 24px;
+  }
+
+  .info {
+    overflow: hidden;
+    white-space: normal;
+
+    h3 {
+      margin: 0 0 24px 0;
+    }
+
+    .duties {
+      margin-bottom: 24px;
+    }
+  }
+
+  .technologies {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    row-gap: 8px;
+
+    span {
+      @include spanCnt;
+    }
+  }
+}
+
+.educationItem {
+  @include sectionItem;
+  .period {
+    text-align: center;
+    padding-right: 4px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.languages {
+  section span {
+    @include spanCnt;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .experienceItem {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 16px;
+
+    .period {
+      padding: 0;
+      border: none;
+    }
+
+    .info h3{
+      text-align: center;
+    }
+  }
+}

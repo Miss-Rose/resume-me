@@ -1,0 +1,26 @@
+$background-color-dark: #003b45;
+$orange-color: #ff7f00;
+$green-color: rgb(6 191 162);
+$background-orange-color: rgba(255, 127, 0, 0.1803921569);
+$text-color-dark: #ffffff;
+
+$background-color-light: #F5F7FA;
+$orange-color-light: #FA8072;
+$green-color-light: #8EABC1;
+$background-orange-color-light: rgba(191, 168, 158, 0.13);
+$text-color-light: #457B9D;
+
+.light {
+  --background-color: white;
+  --text-color: black;
+}
+
+.dark {
+  --background-color: black;
+  --text-color: white;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
